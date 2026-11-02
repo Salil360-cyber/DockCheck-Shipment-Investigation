@@ -1,0 +1,261 @@
+    table_name     | row_count 
+-------------------+-----------
+ stg_receiving_log |    172765
+ stg_dataco        |    180519
+(2 rows)
+
+ order_item_id | times_seen 
+---------------+------------
+(0 rows)
+
+ empty_product_description | empty_order_zipcode | distinct_emails | distinct_passwords | distinct_product_status 
+---------------------------+---------------------+-----------------+--------------------+-------------------------
+                    180519 |              155679 |               1 |                  1 |                       1
+(1 row)
+
+ category_name | id_count | category_ids |    departments     
+---------------+----------+--------------+--------------------
+ Electronics   |        2 | 13, 37       | Footwear, Outdoors
+(1 row)
+
+ category_id | department_name |                 product_name                  
+-------------+-----------------+-----------------------------------------------
+ 13          | Footwear        | Under Armour Kids' Mercenary Slide
+ 13          | Footwear        | Under Armour Men's Compression EV SL Slide
+ 13          | Footwear        | Under Armour Women's Ignite PIP VI Slide
+ 13          | Footwear        | Under Armour Women's Ignite Slide
+ 37          | Outdoors        | Bridgestone e6 Straight Distance NFL Carolina
+ 37          | Outdoors        | Bridgestone e6 Straight Distance NFL San Dieg
+ 37          | Outdoors        | Bridgestone e6 Straight Distance NFL Tennesse
+ 37          | Outdoors        | Titleist Pro V1 High Numbers Personalized Gol
+ 37          | Outdoors        | Titleist Pro V1x Golf Balls
+ 37          | Outdoors        | Titleist Pro V1x High Numbers Golf Balls
+ 37          | Outdoors        | Titleist Pro V1x High Numbers Personalized Go
+(11 rows)
+
+ customer_id | customer_city | customer_state | customer_zipcode 
+-------------+---------------+----------------+------------------
+ 14046       | CA            | 91732          | 
+ 14577       | CA            | 95758          | 
+ 17171       | CA            | 95758          | 
+(3 rows)
+
+ rows_with_trailing_space 
+--------------------------
+                     1774
+(1 row)
+
+ customer_country | rows_  
+------------------+--------
+ EE. UU.          | 111146
+ Puerto Rico      |  69373
+(2 rows)
+
+ late_delivery_risk | real_more_than_scheduled | real_within_scheduled 
+--------------------+--------------------------+-----------------------
+ 0                  |                     4423 |                 77119
+ 1                  |                    98977 |                     0
+(2 rows)
+
+  delivery_status  | rows_ 
+-------------------+-------
+ Shipping canceled |  4423
+(1 row)
+
+    market    | first_order | last_order | orders 
+--------------+-------------+------------+--------
+ USCA         | 2016-04-01  | 2017-01-16 |   8579
+ Africa       | 2016-08-25  | 2017-01-18 |   3854
+ LATAM        | 2015-01-01  | 2017-06-17 |  17181
+ Europe       | 2015-05-31  | 2017-11-10 |  18561
+ Pacific Asia | 2015-10-24  | 2018-01-31 |  17577
+(5 rows)
+
+     table_name      | row_count 
+---------------------+-----------
+ products            |       118
+ fulfillment_centres |         5
+ customers           |     20652
+ orders              |     65752
+ fc_receiving_log    |    172765
+ order_items         |    180519
+(6 rows)
+
+ total_orders | canceled_orders | shipped_orders | late_orders | late_pct_of_shipped 
+--------------+-----------------+----------------+-------------+---------------------
+        65752 |            2855 |          62897 |       36048 |                57.3
+(1 row)
+
+    market    | shipped_orders | late_pct 
+--------------+----------------+----------
+ Pacific Asia |          16853 |     57.7
+ USCA         |           8178 |     57.5
+ Europe       |          17763 |     57.4
+ LATAM        |          16414 |     56.9
+ Africa       |           3689 |     56.5
+(5 rows)
+
+ order_quarter | shipped_orders | late_pct 
+---------------+----------------+----------
+ 2015-Q1       |           4920 |     57.2
+ 2015-Q2       |           4974 |     57.0
+ 2015-Q3       |           5016 |     57.4
+ 2015-Q4       |           5085 |     57.1
+ 2016-Q1       |           4977 |     57.8
+ 2016-Q2       |           4922 |     58.2
+ 2016-Q3       |           5024 |     56.8
+ 2016-Q4       |           5032 |     57.7
+ 2017-Q1       |           4933 |     56.8
+ 2017-Q2       |           4943 |     56.5
+ 2017-Q3       |           5028 |     57.4
+ 2017-Q4       |           6006 |     57.3
+ 2018-Q1       |           2037 |     58.7
+(13 rows)
+
+ shipping_mode  | shipped_orders | avg_days_promised | avg_days_actual | late_pct 
+----------------+----------------+-------------------+-----------------+----------
+ First Class    |           9602 |               1.0 |             2.0 |    100.0
+ Second Class   |          12256 |               2.0 |             4.0 |     80.0
+ Same Day       |           3407 |               0.0 |             0.5 |     48.4
+ Standard Class |          37632 |               4.0 |             4.0 |     39.8
+(4 rows)
+
+ shipping_mode  | days_promised | days_actual | orders | pct_of_mode 
+----------------+---------------+-------------+--------+-------------
+ First Class    |             1 |           2 |   9602 |       100.0
+ Same Day       |             0 |           0 |   1759 |        51.6
+ Same Day       |             0 |           1 |   1648 |        48.4
+ Second Class   |             2 |           2 |   2453 |        20.0
+ Second Class   |             2 |           3 |   2422 |        19.8
+ Second Class   |             2 |           4 |   2473 |        20.2
+ Second Class   |             2 |           5 |   2452 |        20.0
+ Second Class   |             2 |           6 |   2456 |        20.0
+ Standard Class |             4 |           2 |   7610 |        20.2
+ Standard Class |             4 |           3 |   7517 |        20.0
+ Standard Class |             4 |           4 |   7510 |        20.0
+ Standard Class |             4 |           5 |   7458 |        19.8
+ Standard Class |             4 |           6 |   7537 |        20.0
+(13 rows)
+
+ shipping_mode  | days_over_promise | late_orders 
+----------------+-------------------+-------------
+ First Class    |                 1 |        9602
+ Same Day       |                 1 |        1648
+ Second Class   |                 1 |        2422
+ Second Class   |                 2 |        2473
+ Second Class   |                 3 |        2452
+ Second Class   |                 4 |        2456
+ Standard Class |                 1 |        7458
+ Standard Class |                 2 |        7537
+(8 rows)
+
+ late_today | late_with_new_promise | late_pct_today | late_pct_new 
+------------+-----------------------+----------------+--------------
+      36048 |                 21551 |           57.3 |         34.3
+(1 row)
+
+  order_status   | canceled_orders | pct_of_canceled 
+-----------------+-----------------+-----------------
+ SUSPECTED_FRAUD |            1488 |            52.1
+ CANCELED        |            1367 |            47.9
+(2 rows)
+
+ receipt_status | receipts | pct_of_receipts | units_shipped | units_received | units_missing | units_damaged 
+----------------+----------+-----------------+---------------+----------------+---------------+---------------
+ MATCHED        |   165520 |           95.81 |        349454 |         349454 |             0 |             0
+ SHORT          |     4278 |            2.48 |         11434 |           3521 |          7913 |             0
+ DAMAGED        |     2293 |            1.33 |          5241 |           5241 |             0 |          3778
+ OVER           |      674 |            0.39 |          1462 |           2136 |          -674 |             0
+(4 rows)
+
+ fc_code |      fc_name      | receipts | short_receipts | short_pct | units_missing 
+---------+-------------------+----------+----------------+-----------+---------------
+ FC-03   | Europe Hub        |    48090 |           1289 |      2.68 |          2254
+ FC-01   | North America Hub |    24627 |            623 |      2.53 |          1178
+ FC-02   | Latin America Hub |    49309 |           1197 |      2.43 |          2309
+ FC-04   | Asia Pacific Hub  |    39585 |            913 |      2.31 |          1678
+ FC-05   | Africa Hub        |    11154 |            256 |      2.30 |           494
+(5 rows)
+
+ fc_code |   month    | receipts | short_pct | change_vs_last_month 
+---------+------------+----------+-----------+----------------------
+ FC-03   | 2017-01-01 |      625 |      2.24 |                     
+ FC-03   | 2017-06-01 |     1510 |      1.99 |                -0.25
+ FC-03   | 2017-07-01 |     5055 |      2.26 |                 0.27
+ FC-03   | 2017-08-01 |     5065 |      2.39 |                 0.13
+ FC-03   | 2017-09-01 |     4906 |      2.49 |                 0.10
+ FC-03   | 2017-10-01 |     2527 |      7.84 |                 5.35
+ FC-03   | 2017-11-01 |      880 |      6.25 |                -1.59
+(7 rows)
+
+ fc_code |   month    | receipts | short_pct | hotspot_rank 
+---------+------------+----------+-----------+--------------
+ FC-03   | 2017-10-01 |     2527 |      7.84 |            1
+ FC-03   | 2017-11-01 |      880 |      6.25 |            2
+ FC-01   | 2016-12-01 |      196 |      3.57 |            3
+ FC-03   | 2016-09-01 |      792 |      3.41 |            4
+ FC-04   | 2016-12-01 |     1596 |      3.07 |            5
+(5 rows)
+
+      period      | item_size | receipts | short_pct 
+------------------+-----------+----------+-----------
+ Oct-Nov 2017     | 1-3 units |     3233 |      6.93
+ Oct-Nov 2017     | 4-5 units |      174 |     16.67
+ All other months | 1-3 units |    34376 |      1.80
+ All other months | 4-5 units |    10307 |      4.04
+(4 rows)
+
+   month    | receipts 
+------------+----------
+ 2017-06-01 |     1510
+ 2017-07-01 |     5055
+ 2017-08-01 |     5065
+ 2017-09-01 |     4906
+ 2017-10-01 |     2527
+ 2017-11-01 |      880
+(6 rows)
+
+    delivery     | receipts | short_pct 
+-----------------+----------+-----------
+ Late            |    98977 |      2.76
+ On time / early |    73788 |      2.10
+(2 rows)
+
+  department_name  | receipts | damaged_receipts | damaged_pct 
+-------------------+----------+------------------+-------------
+ Fitness           |     2374 |               72 |        3.03
+ Golf              |    31768 |              887 |        2.79
+ Discs Shop        |     1943 |               20 |        1.03
+ Book Shop         |      391 |                4 |        1.02
+ Fan Shop          |    64033 |              629 |        0.98
+ Apparel           |    46884 |              460 |        0.98
+ Outdoors          |     9267 |               90 |        0.97
+ Technology        |     1396 |               12 |        0.86
+ Footwear          |    13891 |              114 |        0.82
+ Pet Shop          |      472 |                3 |        0.64
+ Health and Beauty |      346 |                2 |        0.58
+(11 rows)
+
+CREATE VIEW
+          priority          | cases | value_at_risk_usd 
+----------------------------+-------+-------------------
+ P1 - nothing received      |  2544 |            573134
+ P2 - partial shortage      |  1734 |            197753
+ P3 - damaged units         |  2293 |            353852
+ P4 - overage, verify count |   674 |                 0
+(4 rows)
+
+ receipt_id | fc_code | received_date |    product_name     | shipped_qty | received_qty | damaged_qty |       priority        | value_at_risk_usd 
+------------+---------+---------------+---------------------+-------------+--------------+-------------+-----------------------+-------------------
+     164748 | FC-03   | 2017-10-07    | SOLE E35 Elliptical |           1 |            1 |           1 | P3 - damaged units    |           1999.99
+     170227 | FC-04   | 2017-12-28    | Dell Laptop         |           1 |            0 |           0 | P1 - nothing received |           1500.00
+     170195 | FC-04   | 2017-12-28    | Dell Laptop         |           1 |            1 |           1 | P3 - damaged units    |           1500.00
+     170162 | FC-04   | 2017-12-28    | Dell Laptop         |           1 |            0 |           0 | P1 - nothing received |           1500.00
+     170235 | FC-04   | 2017-12-27    | Dell Laptop         |           1 |            0 |           0 | P1 - nothing received |           1500.00
+     170206 | FC-04   | 2017-12-25    | Dell Laptop         |           1 |            0 |           0 | P1 - nothing received |           1500.00
+     166646 | FC-03   | 2017-11-05    | Dell Laptop         |           1 |            0 |           0 | P1 - nothing received |           1500.00
+     166680 | FC-03   | 2017-11-05    | Dell Laptop         |           1 |            0 |           0 | P1 - nothing received |           1500.00
+     166640 | FC-03   | 2017-11-04    | Dell Laptop         |           1 |            0 |           0 | P1 - nothing received |           1500.00
+     166578 | FC-03   | 2017-11-04    | Dell Laptop         |           1 |            0 |           0 | P1 - nothing received |           1500.00
+(10 rows)
+

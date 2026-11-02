@@ -1,0 +1,4 @@
+__pycache__/
+*.pyc
+DataCoSupplyChainDataset.csv
+.DS_Store
